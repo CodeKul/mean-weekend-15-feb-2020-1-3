@@ -1,0 +1,14 @@
+{
+  "name": "node-first",
+  "version": "0.0.1",
+  "description": "this is simple project",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "codekul"
+  ],
+  "author": "aniruddha",
+  "license": "ISC"
+}
