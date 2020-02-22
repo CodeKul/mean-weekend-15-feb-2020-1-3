@@ -10,5 +10,9 @@
     "codekul"
   ],
   "author": "aniruddha",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "handlebars": "^4.7.3",
+    "html-pdf": "^2.2.0"
+  }
 }
