@@ -1,8 +1,10 @@
+const port = 3000
+
 const express = require('express')
+const bodyParser = require('body-parser')
 
 const app = express()
-
-const port = 3000
+app.use(bodyParser.json())
 
 app.get('/', (request, response) => response.send('Hello World!'))
 app.get('/dtm', (request, response) => {
@@ -11,9 +13,12 @@ app.get('/dtm', (request, response) => {
     response.send({ date: new Date() })
 })
 app.post('/obj', (request, response) => {
-    console.log(request['query'])
-
+    console.log(request.body)
     response.send({ obj : request.body, date : new Date() })
+})
+app.post('/calc', (req, res) => {
+    console.log(`Calculator`)
+    res.send({ result : eval(`${req.body['num1']}${req.body['op']}${req.body['num2']}`) })
 })
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
