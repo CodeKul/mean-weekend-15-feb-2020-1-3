@@ -1,10 +1,11 @@
+import express from 'express'
 import bodyParser from 'body-parser'
-
 class MobileController {
 
-    constructor(router) {
-        this.router = router
+    constructor() {
+        this.router = express.Router()
         this.router.use(bodyParser.json())
+
         this.getAllMobiles()
         this.saveMobile()
     }
@@ -20,6 +21,10 @@ class MobileController {
             res.json({ status: 'success', msg: 'mobile saved successfully', result: req.body })
         })
     }
+
+    get Router() {
+        return this.router
+    }
 }
 
-export default MobileController 
+export default new MobileController().Router
